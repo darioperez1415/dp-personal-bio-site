@@ -12,7 +12,7 @@ export default function AdminRoutes({ user }) {
         path="/projectForm"
         component={() => <ProjectForm user={user} />}
       />
-      <Route exact path="/editProjectForm" component={Projects} />
+      <Route exact path="/editProjectsForm" component={Projects} />
     </Switch>
   );
 }

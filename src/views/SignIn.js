@@ -15,7 +15,7 @@ export default function SignIn({ user }) {
         </div>
       ) : (
         <div className="text-center mt-5">
-          <h1>Welcome! Sign In!</h1>
+          <h1>Welcome my Site! Sign In!</h1>
           <button
             type="button"
             className="btn btn-success"
