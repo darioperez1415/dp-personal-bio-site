@@ -30,7 +30,7 @@ export default function Navigation({ user }) {
             type="button"
             className="btn btn-primary"
           >
-            Admin SignOut
+            SignOut
           </button>
         ) : (
           <button
@@ -38,7 +38,7 @@ export default function Navigation({ user }) {
             type="button"
             className="btn btn-primary"
           >
-            Admin SignIn
+            SignIn
           </button>
         )}
       </Nav>
