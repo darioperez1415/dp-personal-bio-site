@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// Say Thank you
 const ContactForm = () => {
   const [status, setStatus] = useState('Submit');
   const handleSubmit = async (e) => {
