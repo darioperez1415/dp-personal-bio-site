@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
+// import axios from 'axios';
+// import firebaseConfig from '../apiKeys';
 
-// Say Thank you
+// const baseURL = firebaseConfig.databaseURL;
+
+// // Say Thank you
+
+// const initialState = {
+//   name: '',
+//   email: '',
+//   uid: '',
+//   message: '',
+// };
+
 const ContactForm = () => {
   const [status, setStatus] = useState('Submit');
   const handleSubmit = async (e) => {
@@ -9,11 +21,11 @@ const ContactForm = () => {
   };
   //   const { name, email, message } = e.target.elements;
   //   let details = {
-  //     name: name.value,
-  //     email: email.value,
-  //     message: message.value,
+  //    name: name.value,
+  //    email: email.value,
+  //    message: message.value,
   //   };
-  //   let response = await fetch('http://localhost:5000/contact', {
+  //   let response = await axios.post(`${baseURL}message.json, {
   //     method: 'POST',
   //     headers: {
   //       'Content-Type': 'application/json;charset=utf-8',
