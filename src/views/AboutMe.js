@@ -1,9 +1,10 @@
 import React from 'react';
+import About from '../components/About';
 
 export default function AboutMe() {
   return (
     <>
-      <h5 className="card-title">AboutMe</h5>
+      <About />
     </>
   );
 }
