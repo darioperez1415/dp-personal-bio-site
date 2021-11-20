@@ -1,18 +1,36 @@
 import React from 'react';
-import profilePic from '../Logo/profilePic.png';
+import {
+  Container,
+  Row,
+  Image,
+  Col,
+}
+  from 'react-bootstrap';
+import profilePic from '../Logo/profilePic.jpg';
 
 export default function About() {
   return (
     <div>
-      <h1> About</h1>
-      <img src={profilePic} className="card-img-top" alt="Dario Profile-Pic" />
+      <Container>
+        <Row>
+          <Col xs={2} md={2}>
+            <Image
+              src={profilePic}
+              className="card-img-top"
+              alt="Dario Profile-Pic"
+              roundedCircle
+            />
+          </Col>
+        </Row>
+      </Container>
+      <h1> About Me</h1>
       <p>
         {' '}
         Hello I am Dario Perez.After receiving my bachelors in Political Science
         with a minor in International Relations from the University of the West
         Indies in Trinidad and Tobago, I migrated to New York City with my
-        family. I have always been curious about traveling and experiencing new
-        cultures and learning about technology.
+        family. I have always been facinated about technology and learning about new
+        cultures.
       </p>
       <p>
         After securing my conversion from intern to a full-time employee of
