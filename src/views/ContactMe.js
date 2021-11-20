@@ -1,58 +1,78 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
-// import firebaseConfig from '../apiKeys';
-
-// const baseURL = firebaseConfig.databaseURL;
-
+import { createMessage } from '../api/data/messageData';
 // // Say Thank you
 
-// const initialState = {
-//   name: '',
-//   email: '',
-//   uid: '',
-//   message: '',
-// };
+const initialState = {
+  name: '',
+  email: '',
+  message: '',
+};
 
-const ContactForm = () => {
-  const [status, setStatus] = useState('Submit');
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus('Sending...');
+export default function ContactForm() {
+  const [formInput, setFormInput] = useState(initialState);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setFormInput((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
-  //   const { name, email, message } = e.target.elements;
-  //   let details = {
-  //    name: name.value,
-  //    email: email.value,
-  //    message: message.value,
-  //   };
-  //   let response = await axios.post(`${baseURL}message.json, {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json;charset=utf-8',
-  //     },
-  //     body: JSON.stringify(details),
-  //   });
-  //   setStatus('Submit');
-  //   let result = await response.json();
-  //   alert(result.status);
-  // };
+
+  const resetForm = () => {
+    setFormInput(initialState);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createMessage({ ...formInput }).then(() => {
+      resetForm();
+    });
+  };
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Name:</label>
-        <input type="text" id="name" required />
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          value={formInput.name}
+          onChange={handleChange}
+          required
+        />
       </div>
       <div>
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" required />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          value={formInput.email}
+          onChange={handleChange}
+          required
+        />
       </div>
       <div>
         <label htmlFor="message">Message:</label>
-        <textarea id="message" required />
+        <textarea
+          id="message"
+          rows="3"
+          name="message"
+          placeholder="Eenter Message..."
+          value={formInput.message}
+          onChange={handleChange}
+          required
+        />
       </div>
-      <button type="submit">{status}</button>
+      <div className="m-3">
+        <button type="submit" className="btn btn-success">
+          Submit
+        </button>
+      </div>
     </form>
   );
-};
-
-export default ContactForm;
+}
