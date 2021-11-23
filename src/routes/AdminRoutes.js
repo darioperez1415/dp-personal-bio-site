@@ -9,10 +9,14 @@ export default function AdminRoutes({ user }) {
     <Switch>
       <Route
         exact
-        path="/projectForm"
+        path="/create"
         component={() => <ProjectForm user={user} />}
       />
-      <Route exact path="/editProjectsForm" component={Projects} />
+      <Route
+        exact
+        path="/edit/:firebaseKey"
+        component={() => <Projects user={user} />}
+      />
     </Switch>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function ContactForm() {
+export default function ProjectForm() {
   return (
     <>
-        <h5 className="card-title"> Contact Form</h5>         
+      <h5 className="card-title"> Project Form</h5>
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function Navigation({ user }) {
           <NavLink href="/projects">Projects</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/tech">Tech</NavLink>
+          <NavLink href="/tech">Technology</NavLink>
         </NavItem>
         <NavItem>
           <NavLink href="/contact">Contact Me</NavLink>
