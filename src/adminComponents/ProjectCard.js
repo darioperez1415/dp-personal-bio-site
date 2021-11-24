@@ -35,7 +35,7 @@ export default function AdminProjectCard({ project, setProjects }) {
             DELETE
           </button>
           <Link
-            to={`/editProjectArray/${project.firebaseKey}`}
+            to={`/editSingleProject/${project.firebaseKey}`}
             className="btn btn-info"
           >
             UPDATE

@@ -36,9 +36,9 @@ const createProject = (obj) => new Promise((resolve, reject) => {
   });
 });
 
-const updateSingleProject = (projFbkey) => new Promise((resolve, reject) => {
+const updateSingleProject = (firebaseKey) => new Promise((resolve, reject) => {
   axios
-    .get(`${baseURL}/projects/${projFbkey}.json`)
+    .get(`${baseURL}/projects/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
     .catch(reject);
 });

@@ -4,21 +4,15 @@ import ProjectForm from './ProjectForm';
 import { updateSingleProject } from '../api/data/projectData';
 
 export default function EditProject() {
-  const [editProject, setEditProject] = useState({});
-  const { firebaseKey } = useParams();
+  const [updateProject, setEditProject] = useState({});
+  const { fbk } = useParams();
 
   useEffect(() => {
-    let isMounted = true;
-    if (isMounted) {
-      updateSingleProject(firebaseKey).then(setEditProject);
-    }
-    return () => {
-      isMounted = false;
-    };
+    updateSingleProject(fbk).then(setEditProject);
   }, []);
   return (
     <div>
-      <ProjectForm project={editProject} />
+      <ProjectForm projectObj={updateProject} />
     </div>
   );
 }

@@ -116,8 +116,8 @@ export default function ProjectForm({ projectObj = {} }) {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary">
-          Submit
+        <button type="submit" className="btn btn-success">
+          {projectObj.firebaseKey ? 'Update' : 'Submit'}
         </button>
       </form>
     </div>

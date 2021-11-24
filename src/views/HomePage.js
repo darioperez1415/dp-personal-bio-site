@@ -1,9 +1,11 @@
 import React from 'react';
+// import Home from '../components/Home';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <h5 className="card-title"> Home</h5>
-    </>
+    <div>
+      <h3>Home</h3>
+      {/* <Home /> */}
+    </div>
   );
 }

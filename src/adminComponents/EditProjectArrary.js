@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getProjects } from '../api/data/projectData';
 import AdminProjectCard from './ProjectCard';
+// import { useParams } from 'react-router-dom';
 
 export default function EditProjectView() {
   const [projects, setProjects] = useState([]);
-
+  // const { firebaseKey } = useParams();
   useEffect(() => {
     let isMounted = true;
     getProjects().then((projectArray) => {

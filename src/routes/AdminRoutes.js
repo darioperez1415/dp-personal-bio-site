@@ -20,7 +20,7 @@ export default function AdminRoutes({ user }) {
       />
       <Route
         exact
-        path="/editSingleProject"
+        path="/editSingleProject/:fbk"
         component={EditSingleProject}
       />
     </Switch>
