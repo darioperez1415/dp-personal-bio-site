@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Projects from '../adminComponents/Projects';
+import EditProjectArray from '../adminComponents/EditProjectArrary';
+import EditSingleProject from '../adminComponents/EditSingleProject';
 import ProjectForm from '../adminComponents/ProjectForm';
 
 export default function AdminRoutes({ user }) {
@@ -12,7 +13,16 @@ export default function AdminRoutes({ user }) {
         path="/projectForm"
         component={() => <ProjectForm user={user} />}
       />
-      <Route exact path="/editProjectsForm" component={Projects} />
+      <Route
+        exact
+        path="/editProjectArray"
+        component={EditProjectArray}
+      />
+      <Route
+        exact
+        path="/editSingleProject/:fbk"
+        component={EditSingleProject}
+      />
     </Switch>
   );
 }

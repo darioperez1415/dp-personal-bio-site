@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getProjects } from '../api/data/projectData';
-import ProjectCard from '../components/Projects';
+import AdminProjectCard from './ProjectCard';
+// import { useParams } from 'react-router-dom';
 
-export default function ProjectView() {
+export default function EditProjectView() {
   const [projects, setProjects] = useState([]);
-
+  // const { firebaseKey } = useParams();
   useEffect(() => {
     let isMounted = true;
     getProjects().then((projectArray) => {
@@ -18,7 +19,11 @@ export default function ProjectView() {
     <div>
       <>
         {projects.map((project) => (
-          <ProjectCard key={project.firebaseKey} project={project} />
+          <AdminProjectCard
+            key={project.firebaseKey}
+            project={project}
+            setProjects={setProjects}
+          />
         ))}
       </>
     </div>
