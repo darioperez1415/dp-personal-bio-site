@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Projects from '../adminComponents/Projects';
+import EditProjectArray from '../adminComponents/EditProjectArrary';
+import EditSingleProject from '../adminComponents/EditSingleProject';
 import ProjectForm from '../adminComponents/ProjectForm';
 
 export default function AdminRoutes({ user }) {
@@ -9,13 +10,18 @@ export default function AdminRoutes({ user }) {
     <Switch>
       <Route
         exact
-        path="/create"
+        path="/projectForm"
         component={() => <ProjectForm user={user} />}
       />
       <Route
         exact
-        path="/edit/:firebaseKey"
-        component={() => <Projects user={user} />}
+        path="/editProjectArray"
+        component={EditProjectArray}
+      />
+      <Route
+        exact
+        path="/editSingleProject"
+        component={EditSingleProject}
       />
     </Switch>
   );

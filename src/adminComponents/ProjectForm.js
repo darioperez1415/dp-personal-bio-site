@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { createProject, updateProject } from '../api/data/projectData';
 
 const initialState = {
   name: '',
   description: '',
   imageUrl: '',
+  gitHubURL: '',
+  projectImage: '',
+  projectLink: '',
 };
 export default function ProjectForm({ projectObj = {} }) {
   const [formInput, setFormInput] = useState(initialState);
+  const history = useHistory();
   useEffect(() => {
     if (projectObj.firebaseKey) {
       setFormInput({
         name: projectObj.name,
         firebaseKey: projectObj.firebaseKey,
         description: projectObj.description,
-        imageUrl: projectObj.imageUrl,
+        projectImage: projectObj.projectImage,
+        gitHubURL: projectObj.gitHubURL,
+        projectLink: projectObj.projectLink,
       });
     }
   }, [projectObj]);
@@ -35,11 +42,12 @@ export default function ProjectForm({ projectObj = {} }) {
     e.preventDefault();
     if (projectObj.firebaseKey) {
       updateProject(formInput).then(() => {
-        resetForm();
+        history.push('/editProjectArray');
       });
     } else {
       createProject({ ...formInput }).then(() => {
         resetForm();
+        history.push('/editProjectArray');
       });
     }
   };
@@ -47,73 +55,75 @@ export default function ProjectForm({ projectObj = {} }) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3 d-flex">
-          <div>
-            <label htmlFor="name" className="form-label">
-              Name
-            </label>
-            <input
-              className="form-control form-control-lg me-1"
-              type="text"
-              id="name"
-              name="name"
-              value={formInput.name}
-              onChange={handleChange}
-              placeholder="Enter Project Name!"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="imageURL" className="form-label visually-hidden">
-              ImageURL
-            </label>
-            <input
-              className="form-control form-control-lg me-1"
-              type="text"
-              id="imageUrl"
-              name="imageUrl"
-              value={formInput.imageUrl}
-              onChange={handleChange}
-              placeholder="Enter Image URL!"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="description" className="form-label visually-hidden">
-              Project Description
-            </label>
-            <input
-              className="form-control form-control-lg me-1"
-              type="textarea"
-              id="description"
-              name="description"
-              rows="4"
-              value={formInput.description}
-              onChange={handleChange}
-              placeholder="Enter project Description!"
-              required
-            />
-          </div>
-          <div>
-            <button className="btn btn-success" type="submit">
-              {projectObj?.firebaseKey ? 'Update' : 'Submit'}
-            </button>
-          </div>
+        <div className="form-group">
+          <label htmlFor="name">Project Name</label>
+          <input
+            type="text"
+            name="name"
+            className="form-control"
+            id="name"
+            placeholder="Project Name"
+            value={formInput.name || ''}
+            onChange={handleChange}
+          />
         </div>
+        <div className="form-group">
+          <label htmlFor="projectImage">Project Image</label>
+          <input
+            type="text"
+            name="projectImage"
+            className="form-control"
+            id="projectImage"
+            placeholder="Project Image"
+            value={formInput.projectImage || ''}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="projectLink">Project App Url</label>
+          <input
+            type="text"
+            name="projectLink"
+            className="form-control"
+            id="projectLink"
+            placeholder="Project App Url"
+            value={formInput.projectLink || ''}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="description">Project Description</label>
+          <input
+            type="text"
+            name="description"
+            className="form-control"
+            id="description"
+            placeholder="Project Description"
+            value={formInput.description || ''}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="gitHubURL">Github Url</label>
+          <input
+            type="text"
+            name="gitHubURL"
+            className="form-control"
+            id="gitHubURL"
+            placeholder="Github Url"
+            value={formInput.gitHubURL || ''}
+            onChange={handleChange}
+          />
+        </div>
+
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
       </form>
     </div>
   );
 }
-
 ProjectForm.propTypes = {
-  projectObj: PropTypes.shape({
-    name: PropTypes.string,
-    description: PropTypes.string,
-    firebaseKey: PropTypes.string,
-    imageUrl: PropTypes.string,
-  }),
+  projectObj: PropTypes.shape({}),
 };
-
-ProjectForm.defaultProps = {
-  projectObj: {},
-};
+ProjectForm.defaultProps = { projectObj: {} };

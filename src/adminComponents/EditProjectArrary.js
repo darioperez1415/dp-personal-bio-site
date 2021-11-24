@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getProjects } from '../api/data/projectData';
-import ProjectCard from '../components/Projects';
+import AdminProjectCard from './ProjectCard';
 
-export default function ProjectView() {
+export default function EditProjectView() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,11 @@ export default function ProjectView() {
     <div>
       <>
         {projects.map((project) => (
-          <ProjectCard key={project.firebaseKey} project={project} />
+          <AdminProjectCard
+            key={project.firebaseKey}
+            project={project}
+            setProjects={setProjects}
+          />
         ))}
       </>
     </div>

@@ -10,9 +10,9 @@ const getProjects = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const deleteProject = (projFbkey) => new Promise((resolve, reject) => {
+const deleteProject = (firebaseKey) => new Promise((resolve, reject) => {
   axios
-    .delete(`${baseURL}/projects/${projFbkey.firebaseKey}.json`)
+    .delete(`${baseURL}/projects/${firebaseKey}.json`)
     .then(() => getProjects().then(resolve))
     .catch(reject);
 });
@@ -25,19 +25,18 @@ const updateProject = (projObj) => new Promise((resolve, reject) => {
 });
 
 const createProject = (obj) => new Promise((resolve, reject) => {
-  axios
-    .post(`${baseURL}/projects.json`, obj)
-    .then((response) => {
-      axios
-        .patch(`${baseURL}/projects/${response.data.name}.json`, {
-          firebaseKey: response.data.name,
-        })
-        .then(() => getProjects(obj.uid).then(resolve));
-    })
-    .catch(reject);
+  axios.post(`${baseURL}/projects.json`, obj).then((response) => {
+    const firebaseKey = response.data.name;
+    axios
+      .patch(`${baseURL}/projects/${firebaseKey}.json`, { firebaseKey })
+      .then(() => {
+        getProjects().then(resolve);
+      })
+      .catch(reject);
+  });
 });
 
-const getProjFBK = (projFbkey) => new Promise((resolve, reject) => {
+const updateSingleProject = (projFbkey) => new Promise((resolve, reject) => {
   axios
     .get(`${baseURL}/projects/${projFbkey}.json`)
     .then((response) => resolve(response.data))
@@ -49,5 +48,5 @@ export {
   deleteProject,
   updateProject,
   createProject,
-  getProjFBK,
+  updateSingleProject,
 };
