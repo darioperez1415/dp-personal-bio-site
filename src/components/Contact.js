@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createMessage } from '../api/data/messageData';
+import '../styles/globals/contact.scss';
 // // Say Thank you
 
 const initialState = {
