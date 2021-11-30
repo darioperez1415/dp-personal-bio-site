@@ -15,12 +15,10 @@ export default function ProjectView() {
     };
   }, []);
   return (
-    <div>
-      <>
-        {projects.map((project) => (
-          <ProjectCard key={project.firebaseKey} project={project} />
-        ))}
-      </>
+    <div className="flex-container">
+      {projects.map((project) => (
+        <ProjectCard key={project.firebaseKey} project={project} />
+      ))}
     </div>
   );
 }
