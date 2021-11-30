@@ -1,6 +1,9 @@
 # Dario Perez - Personal Bio Site :)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/339c4ae9-fc7f-41b4-9b49-2dab0a20eaba/deploy-status)](https://dp-personal-bio.netlify.app)
 
+## [View Site](https://dp-personal-bio.netlify.app)
+
+## Get Started:
 ```javascript
  $ git clone git@github.com:darioperez1415/dp-personal-bio-site.git
  $ cd dp-personal-bio-site
