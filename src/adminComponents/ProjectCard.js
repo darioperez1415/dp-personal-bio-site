@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import '../styles/globals/projectCards.scss';
 import { deleteProject } from '../api/data/projectData';
 
 export default function AdminProjectCard({ project, setProjects }) {
@@ -11,12 +12,13 @@ export default function AdminProjectCard({ project, setProjects }) {
   };
 
   return (
-    <div>
-      <div className="card" style={{ width: '18rem' }}>
+    <div className="flex-container" style={{ width: '18rem' }}>
+      <div className="card">
         <img
           src={project.projectImage}
           className="card-img-top"
           alt="projectImage"
+          style={{ width: '18rem' }}
         />
         <div className="card-body">
           <h3 className="card-title">{project.name}</h3>

@@ -53,72 +53,75 @@ export default function ProjectForm({ projectObj = {} }) {
   };
 
   return (
-    <div>
+    <div className="container">
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Project Name</label>
-          <input
-            type="text"
-            name="name"
-            className="form-control"
-            id="name"
-            placeholder="Project Name"
-            value={formInput.name || ''}
-            onChange={handleChange}
-          />
+        <div className="row pt-5 mx-auto">
+          <div className="col-8 form-group mx-auto">
+            <input
+              type="text"
+              name="name"
+              className="form-control"
+              id="name"
+              placeholder="Project Name"
+              value={formInput.name || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-8 form-group pt-2 mx-auto">
+            <input
+              type="text"
+              name="projectImage"
+              className="form-control"
+              id="projectImage"
+              placeholder="Project Image"
+              value={formInput.projectImage || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-8 form-group pt-2 mx-auto">
+            <input
+              type="text"
+              name="projectLink"
+              className="form-control"
+              id="projectLink"
+              placeholder="Project App Url"
+              value={formInput.projectLink || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-8 form-group pt-2 mx-auto">
+            <textarea
+              type="text"
+              name="description"
+              className="form-control"
+              id="description"
+              cols="30"
+              row="12"
+              placeholder="Project Description"
+              value={formInput.description || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-8 form-group pt-2 mx-auto">
+            <input
+              type="text"
+              name="gitHubURL"
+              className="form-control"
+              id="gitHubURL"
+              placeholder="Github Url"
+              value={formInput.gitHubURL || ''}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="col-8 pt-3 mx-auto">
+            <input
+              type="submit"
+              className="btn btn-success"
+              value="Submit"
+            />
+            {projectObj.firebaseKey ? 'Update' : 'Submit'}
+          </div>
         </div>
-        <div className="form-group">
-          <label htmlFor="projectImage">Project Image</label>
-          <input
-            type="text"
-            name="projectImage"
-            className="form-control"
-            id="projectImage"
-            placeholder="Project Image"
-            value={formInput.projectImage || ''}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="projectLink">Project App Url</label>
-          <input
-            type="text"
-            name="projectLink"
-            className="form-control"
-            id="projectLink"
-            placeholder="Project App Url"
-            value={formInput.projectLink || ''}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="description">Project Description</label>
-          <input
-            type="text"
-            name="description"
-            className="form-control"
-            id="description"
-            placeholder="Project Description"
-            value={formInput.description || ''}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="gitHubURL">Github Url</label>
-          <input
-            type="text"
-            name="gitHubURL"
-            className="form-control"
-            id="gitHubURL"
-            placeholder="Github Url"
-            value={formInput.gitHubURL || ''}
-            onChange={handleChange}
-          />
-        </div>
-
-        <button type="submit" className="btn btn-success">
-          {projectObj.firebaseKey ? 'Update' : 'Submit'}
-        </button>
       </form>
     </div>
   );
