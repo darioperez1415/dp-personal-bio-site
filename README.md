@@ -55,8 +55,5 @@ export default function EditProjectView() {
 <br/>
 <img width="951" alt="2021-11-22 (4)" src="https://user-images.githubusercontent.com/83309084/144143097-51f5b2a8-db8a-4fe0-8111-c5625f02e311.png">
 <br/>
-<>
-  <img src=${cat} alt="picture of a cat"/>
-</>
 
 ## Contributors: [Dario Perez](https://github.com/darioperez1415)
