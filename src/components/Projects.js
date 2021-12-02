@@ -17,7 +17,7 @@ export default function ProjectCard({ project }) {
           <a href={project.projectLink} className="btn btn-secondary text-dark">
             Live Site
           </a>
-          <a href={project.gitHubURL} className="btn btn-secondary text-dark">
+          <a href={project.gitHubURL} className="btn btn-info">
             Repo
           </a>
         </div>

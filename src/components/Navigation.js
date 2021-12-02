@@ -13,7 +13,7 @@ export default function Navigation({ user }) {
       </div>
       <div className="rightSide">
         <div className="rightSideLinks">
-          <a href="/about">About</a>
+          <a href="/about">About Me</a>
           <a href="/projects">Projects</a>
           <a href="/tech">Technology </a>
           <a href="/contact">Contact Me</a>

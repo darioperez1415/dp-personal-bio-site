@@ -4,13 +4,13 @@ import {
   Row,
   Image,
   Col,
-}
-  from 'react-bootstrap';
+} from 'react-bootstrap';
 import profilePic from '../Logo/profilePic.jpg';
+import '../styles/globals/about.scss';
 
 export default function About() {
   return (
-    <div>
+    <div className="abt">
       <Container>
         <Row>
           <Col xs={2} md={2}>
@@ -24,32 +24,36 @@ export default function About() {
         </Row>
       </Container>
       <h1> About Me</h1>
-      <p>
-        {' '}
-        Hello I am Dario Perez.After receiving my bachelors in Political Science
-        with a minor in International Relations from the University of the West
-        Indies in Trinidad and Tobago, I migrated to New York City with my
-        family. I have always been facinated about technology and learning about new
-        cultures.
-      </p>
-      <p>
-        After securing my conversion from intern to a full-time employee of
-        Alliance Bernstein, I was approved for an opportunity to relocate to
-        Nashville and decided to take the leap. I switched roles into one where
-        I would be able to grow as a developer and was promoted to Associate
-        Officer in June 2021. In addition to working full time, I am attending
-        the Nashville software school part-time to begin my journey in software
-        development.
-      </p>
-      Working at AB allowed me to solve complex problems using logic while
-      working in a team environment. Programing helped me to express my
-      creativity and with my diverse backgrough and work eithc enable me to add
-      value to any team I work with.
-      <p>
-        I decided to invest in myself and join the Nashville Software School.
-        This helped me learn the skills and discipline to learn software
-        development and continue to grow with every new technology I encounter.{' '}
-      </p>
+      <div className="info">
+        <p>
+          {' '}
+          Hello I am Dario Perez.After graduationg from the University of the
+          West Indies in Trinidad and Tobago with a bachelors in Political
+          Science and a minor in International Relations, I migrated to New York
+          City. My passion for traveling and curiousity for other cultures give
+          me confidence to look for opportunites outside of my home country. I
+          am aslo a soccer fanatic!
+        </p>
+        <p>
+          After securing an internsip at Alliance Bernstein I was coverted to a
+          full-time employee.I expressed a desirie to work in a technology role
+          and there were open roles offered at their newly construted
+          headquaters in Nashville.The chance of experiencing Music City was a
+          chance I could not turn down! Relocating aslo opened the door to an
+          abondance of carrer opportunites,new frienships and amazing
+          adventures.
+        </p>
+        <p>
+          I decidend to make programming my carrer and made an investment in
+          myself and joined the Nashville Software School. Software Enginaring
+          similiar to soccer requires discipline and lots of practice while
+          working in team envirnment towards the same goal. Programming is
+          perfect fit for me becuase it gave me the tools necessary to solve
+          complex problems and bring ideas to life. I enjoy the thrill of
+          improving as a developer and growing with every new technology I
+          encounter.{' '}
+        </p>
+      </div>
     </div>
   );
 }
