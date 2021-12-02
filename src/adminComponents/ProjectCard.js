@@ -12,13 +12,12 @@ export default function AdminProjectCard({ project, setProjects }) {
   };
 
   return (
-    <div className="flex-container" style={{ width: '18rem' }}>
+    <div className="container">
       <div className="card">
         <img
           src={project.projectImage}
           className="card-img-top"
           alt="projectImage"
-          style={{ width: '18rem' }}
         />
         <div className="card-body">
           <h3 className="card-title">{project.name}</h3>
