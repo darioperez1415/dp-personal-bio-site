@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/globals/projectCards.scss';
 
 export default function ProjectCard({ project }) {
   return (
-    <div>
-      <div className="card" style={{ width: '18rem' }}>
+    <div className="container">
+      <div className="card">
         <img
           src={project.projectImage}
           className="card-img-top"
           alt="projectImage"
         />
         <div className="card-body">
-          <h5 className="card-title">{project.name}</h5>
+          <h3 className="card-title">{project.name}</h3>
           <p className="card-text">{project.description}</p>
           <a href={project.projectLink} className="btn btn-secondary text-dark">
             Live Site
