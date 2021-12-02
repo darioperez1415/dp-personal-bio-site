@@ -9,4 +9,11 @@
   .card-img-top{
     width: 100%;
   }
-
+  .btn.btn-info{ 
+      border-radius: 5px;
+      color:darkblue;
+      margin-left: 10px;
+  }
+  .btn.btn-info:hover{
+    background-color: rgb(102, 173, 231);
+  }
