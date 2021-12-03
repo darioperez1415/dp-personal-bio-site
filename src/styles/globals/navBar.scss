@@ -13,6 +13,10 @@
  align-items: center;
 }
 
+.Navbar .leftSide .leftSidelinks{
+ max-height: 80px;
+} 
+
 .Navbar .leftSide .leftSidelinks a {
  text-decoration: none;
  max-height: 50px;
@@ -21,13 +25,23 @@
  margin-left:15px;
 }
 
+.Navbar .rightSide button{
+    display: none;
+    margin-left: 20px;
+} 
+.Navbar .leftSide #hidden{
+    display: flex;
+} 
+   
 .Navbar .rightSide{
 flex:50%;
 text-decoration: none;
 display:flex;
 align-items: center;
 justify-content: flex-end;
+padding-right: 10px;
 }
+
 .Navbar .rightSide .rightSideLinks a {
  text-decoration: none;
  max-height: 50px;
@@ -35,6 +49,7 @@ justify-content: flex-end;
  font-size: 17px;
  margin-left:15px;
 }
+
 .rightSide button{
  height: 32px;
 }
@@ -44,10 +59,47 @@ justify-content: flex-end;
   font-size: 16px;
  }
 }
-
+ @media only screen and (max-width: 880px){
+      .Navbar .rightSide .rightSideLinks a {
+    font-size: 14px;
+}
+ }
 @media only screen and (max-width: 750px) {
     .Navbar .leftSide .leftSidelinks a {
      font-size: 12px;
  }
+ .Navbar .rightSide .rightSideLinks a {
+    font-size: 10px;
 }
-     
+}
+@media only screen and (max-width: 650px) {
+    .Navbar .leftSide button {
+     display: flex;
+ }
+}
+
+@media only screen and (max-width: 500px) {
+    .Navbar .rightSide button{
+    display: flex;
+}
+}
+//  .Navbar .rightSide .rightSideLinks a{
+//   display: none;
+//  }
+//  .Navbar .rightSide .rightSideLinks #hidden {
+//     position: absolute; 
+//     left: 0px;
+//     top: 80px;
+//     height: 230px;
+//     max-height: 230px;
+//     width: 100%;
+//     background-color: #042b50;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//  }
+//  .Navbar .rightSide #hidden{
+//      margin: 20px;
+//      font-size: 25px;
+//  }
+// }

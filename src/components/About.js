@@ -50,7 +50,7 @@ export default function About() {
           environment towards the same goal. Programming is a perfect fit for me
           because it gave me the tools necessary to solve complex problems and
           bring ideas to life. I enjoy the thrill of improving as a developer
-          and growing with every new technology I encounter{' '}
+          and growing with every new technology I encounter.{' '}
         </p>
       </div>
     </div>
