@@ -49,7 +49,7 @@ export default function EditProjectView() {
 <br/>
 <img width="942" alt="2021-11-22 (1)" src="https://user-images.githubusercontent.com/83309084/144143075-6a0d4422-b927-430c-bc6a-58560d4a7c9f.png">
 <br/>
-<img width="952" alt="2021-11-22 (2)" src="https://user-images.githubusercontent.com/83309084/144143145-87389e40-cabd-4de2-8847-55a1450abc5f.png">
+<img width="952" alt="2021-11-22 (2)" src="https://user-images.githubusercontent.com/83309084/144685207-739fdffb-98ba-4e36-9437-514cc452da54.png)">
 <br/>
 <img width="937" alt="2021-11-22 (3)" src="https://user-images.githubusercontent.com/83309084/144143114-ca42aa27-9204-4cf5-92c6-9910d9a203c7.png">
 <br/>
