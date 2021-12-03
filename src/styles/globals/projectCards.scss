@@ -17,3 +17,11 @@
   .btn.btn-info:hover{
     background-color: rgb(102, 173, 231);
   }
+  @media only screen and (max-width: 1700px) {
+    .container {
+      display: block !important;
+      float: none !important;
+      color: rgb(44, 44, 44);
+      margin-top: 1.5em;
+    }
+  }
