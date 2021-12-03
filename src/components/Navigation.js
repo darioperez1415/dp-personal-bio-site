@@ -24,7 +24,7 @@ export default function Navigation({ user }) {
           SignOut
         </button>
       ) : (
-        <button onClick={signInUser} type="button" className="btn btn-primary">
+        <button onClick={signInUser} type="button" className="btn btn-primary visually-hidden">
           SignIn
         </button>
       )}
